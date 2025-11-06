@@ -13,9 +13,9 @@ applications:
   env:
     # Kaggle API Credentials
     KAGGLE_USERNAME: nikhilprao
-    KAGGLE_KEY: 80_YOUR_FULL_KEY_HERE_de8
+    KAGGLE_KEY: 80e5a86ef24342f203fff15bb4a74de8
     KAGGLE_DATASET: camnugent/sandp500
-    
+
     # SAP HANA Connection Details
     HANA_ADDRESS: a0b0b370-2621-4f9c-95c3-2063833ac9ef.hana.prod-us10.hanacloud.ondemand.com
     HANA_PORT: 443
