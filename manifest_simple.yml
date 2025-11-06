@@ -1,0 +1,25 @@
+---
+applications:
+- name: kaggle-hana-etl
+  instances: 1
+  memory: 512M
+  disk_quota: 512M
+  buildpacks:
+  - python_buildpack
+  # Run the simple ETL script once
+  command: python simple_etl.py
+  health-check-type: process
+  no-route: true  # No web interface needed
+  env:
+    # Kaggle API Credentials
+    KAGGLE_USERNAME: nikhilprao
+    KAGGLE_KEY: 80_YOUR_FULL_KEY_HERE_de8
+    KAGGLE_DATASET: camnugent/sandp500
+    
+    # SAP HANA Connection Details
+    HANA_ADDRESS: a0b0b370-2621-4f9c-95c3-2063833ac9ef.hana.prod-us10.hanacloud.ondemand.com
+    HANA_PORT: 443
+    HANA_USER: DBADMIN
+    HANA_PASSWORD: Qwerty!123456
+    HANA_SCHEMA: SP500_DATA
+    HANA_TABLE: STOCK_PRICES
