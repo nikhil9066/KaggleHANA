@@ -57,3 +57,4 @@ kaggle.json
 
 # Cloud Foundry
 .cfignore
+manifest.yml
