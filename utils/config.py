@@ -77,6 +77,13 @@ def load_config():
         'paths': {
             'data_dir': os.getenv('DATA_DIR', 'data'),
             'downloads_dir': os.getenv('DOWNLOADS_DIR', 'downloads')
+        },
+
+        # ETL Pipeline settings
+        'etl': {
+            'batch_size': int(os.getenv('ETL_BATCH_SIZE', '1000')),
+            'incremental': os.getenv('ETL_INCREMENTAL', 'true').lower() == 'true',
+            'enable_validation': os.getenv('ETL_ENABLE_VALIDATION', 'true').lower() == 'true'
         }
     }
 
