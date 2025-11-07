@@ -47,7 +47,11 @@ def main():
         logger.info(f"✅ Successfully fetched {len(df)} rows from Kaggle")
         logger.info(f"   Date range: {df['Date'].min()} to {df['Date'].max()}")
         logger.info(f"   Unique tickers: {df['Ticker'].nunique()}")
-        
+
+        # Limit to first 50 rows only
+        df = df.head(50)
+        logger.info(f"⚠️  Limited dataset to 50 rows for testing")
+
         # Step 2: Connect to HANA
         logger.info("\n[STEP 2] Connecting to SAP HANA...")
         hana_client = HanaClient(config)
