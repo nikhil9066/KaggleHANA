@@ -49,7 +49,7 @@ SELECT MIN(DATE) as MIN_DATE, MAX(DATE) as MAX_DATE FROM SP500_DATA.STOCK_PRICES
 ## 🖼️ Visual Evidence of Success
 
 ### 1. **HANA Row Count Verification**
-![Row Count Query](Screenshot%202025-11-07%20at%203.26.35%20PM.png)
+![Row Count Query](Row Count Verification.png)
 
 **What this shows:**
 - ✅ Query: `SELECT COUNT(*) FROM SP500_DATA.STOCK_PRICES`
@@ -60,7 +60,7 @@ SELECT MIN(DATE) as MIN_DATE, MAX(DATE) as MAX_DATE FROM SP500_DATA.STOCK_PRICES
 ---
 
 ### 2. **Sample Data Verification**
-![Sample Stock Data](Screenshot%202025-11-07%20at%203.27.29%20PM.png)
+![Sample Stock Data](Sample Data Verification.png)
 
 **What this shows:**
 - ✅ Stock ticker: **A** (Agilent Technologies)
@@ -86,7 +86,7 @@ DAILY_RETURN: -0.008873 (-0.89%)
 ---
 
 ### 3. **Cloud Foundry Deployment Success**
-![CF Deployment Logs](Screenshot%202025-11-07%20at%203.30.50%20PM.png)
+![CF Deployment Logs](Cloud Foundry Deployment Success.png)
 
 **What this shows:**
 - ✅ Python buildpack installed successfully
@@ -105,7 +105,7 @@ DAILY_RETURN: -0.008873 (-0.89%)
 ---
 
 ### 4. **ETL Process Execution Logs**
-![ETL Execution](Screenshot%202025-11-07%20at%203.31.16%20PM.png)
+![ETL Execution](ETL Process Execution Logs.png)
 
 **What this shows:**
 - ✅ **Step 1**: Kaggle data fetched (619,040 rows downloaded)
@@ -134,7 +134,7 @@ DAILY_RETURN: -0.008873 (-0.89%)
 ---
 
 ### 5. **Data Schema Verification**
-![HANA Table Schema](Screenshot%202025-11-07%20at%203.31.47%20PM.png)
+![HANA Table Schema](Data Schema Verification.png)
 
 **What this shows:**
 - ✅ Table structure properly created in HANA
@@ -152,7 +152,7 @@ DAILY_RETURN: -0.008873 (-0.89%)
 ---
 
 ### 6. **SAP HANA Cloud Database Health**
-![HANA Database Monitor](Screenshot%202025-11-07%20at%203.32.26%20PM.png)
+![HANA Database Monitor](SAP HANA Cloud Database Health.png)
 
 **What this shows:**
 - ✅ Database instance running and healthy
