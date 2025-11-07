@@ -208,6 +208,9 @@ class KaggleApiClient:
                 df['Daily_Range'] = df['High'] - df['Low']
                 df['Daily_Return'] = df.groupby('Ticker')['Close'].pct_change()
 
+                # Remove rows with NaN in Daily_Return (first row per ticker)
+                df = df.dropna(subset=['Daily_Return'])
+
             # Reset index
             df = df.reset_index(drop=True)
 
