@@ -48,8 +48,8 @@ def main():
         logger.info(f"   Date range: {df['Date'].min()} to {df['Date'].max()}")
         logger.info(f"   Unique tickers: {df['Ticker'].nunique()}")
 
-        # Limit to first 50 rows only
-        df = df.head(50)
+        # Limit to first 10 rows only
+        df = df.head(10)
         logger.info(f"⚠️  Limited dataset to 50 rows for testing")
 
         # Step 2: Connect to HANA
