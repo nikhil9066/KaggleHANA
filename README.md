@@ -2,6 +2,15 @@
 
 A comprehensive, enterprise-grade **data migration and ETL solution** demonstrating real-world patterns for migrating external data sources into SAP ecosystems. This project showcases how to build production-ready data pipelines that can be extended to various SAP platforms including SAP HANA Cloud, SAP S/4HANA, and SAP BTP.
 
+---
+
+## 📖 Documentation Quick Links
+
+- **[🚀 Oracle to S/4HANA Migration Guide](ORACLE_TO_S4HANA_MIGRATION_GUIDE.md)** - Complete guide for Oracle to S/4HANA data migration including TB-scale strategies
+- **[✅ Migration Results](outputs/MIGRATION_RESULTS.md)** - View detailed migration output and results (46,246+ rows migrated)
+
+---
+
 ## 🎯 Project Overview
 
 This pipeline demonstrates modern cloud data migration patterns by:
