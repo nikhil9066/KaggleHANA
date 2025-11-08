@@ -61,43 +61,43 @@ This guide provides a comprehensive framework for migrating data from **Oracle d
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                     SOURCE SYSTEM (Oracle)                       │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │   Oracle DB  │  │  Oracle DWH  │  │  Oracle Apps │          │
-│  │  (OLTP Data) │  │  (Analytics) │  │  (Business)  │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-└─────────┼──────────────────┼──────────────────┼─────────────────┘
-          │                  │                  │
-          │ ◄────── Data Extraction ──────► │
-          │                  │                  │
-┌─────────▼──────────────────▼──────────────────▼─────────────────┐
-│              MIDDLEWARE LAYER (This Project)                     │
+│                     SOURCE SYSTEM (Oracle)                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Oracle DB  │  │  Oracle DWH  │  │  Oracle Apps │           │
+│  │  (OLTP Data) │  │  (Analytics) │  │  (Business)  │           │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘           │
+└─────────┼─────────────────┼─────────────────┼───────────────────┘
+          │                 │                 │
+          │ ◄────── Data Extraction ──────►   │
+          │                 │                 │
+┌─────────▼─────────────────▼─────────────────▼───────────────────┐
+│              MIDDLEWARE LAYER (This Project)                    │
 │  ┌──────────────────────────────────────────────────────────┐   │
-│  │           Python ETL Pipeline (Advanced)                  │   │
-│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐         │   │
-│  │  │  Extract   │→ │ Transform  │→ │   Load     │         │   │
-│  │  │ (Oracle)   │  │ (Validate) │  │ (S/4HANA)  │         │   │
-│  │  └────────────┘  └────────────┘  └────────────┘         │   │
-│  │                                                           │   │
-│  │  Features:                                                │   │
+│  │           Python ETL Pipeline (Advanced)                 │   │
+│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐          │   │
+│  │  │  Extract   │→ │ Transform  │→ │   Load     │          │   │
+│  │  │ (Oracle)   │  │ (Validate) │  │ (S/4HANA)  │          │   │
+│  │  └────────────┘  └────────────┘  └────────────┘          │   │
+│  │                                                          │   │
+│  │  Features:                                               │   │
 │  │  • Incremental Loading  • Batch Processing               │   │
 │  │  • Data Validation      • Error Handling                 │   │
 │  │  • Metrics & Monitoring • Parallel Processing            │   │
 │  └──────────────────────────────────────────────────────────┘   │
-│                                                                   │
-│  Deployment Options:                                             │
+│                                                                 │
+│  Deployment Options:                                            │
 │  • SAP BTP Cloud Foundry  • Kubernetes  • On-Premise VMs        │
-└───────────────────────────────┬───────────────────────────────────┘
+└───────────────────────────────┬─────────────────────────────────┘
                                 │
                                 │ ◄─── Data Loading ────►
                                 │
 ┌───────────────────────────────▼───────────────────────────────────┐
 │                    TARGET SYSTEM (SAP S/4HANA)                    │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │  SAP HANA    │  │  S/4HANA     │  │  SAP BTP     │           │
-│  │  Cloud DB    │  │  Business    │  │  Services    │           │
-│  │              │  │  Objects     │  │              │           │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐             │
+│  │  SAP HANA    │  │  S/4HANA     │  │  SAP BTP     │             │
+│  │  Cloud DB    │  │  Business    │  │  Services    │             │
+│  │              │  │  Objects     │  │              │             │
+│  └──────────────┘  └──────────────┘  └──────────────┘             │
 └───────────────────────────────────────────────────────────────────┘
 ```
 
@@ -311,14 +311,14 @@ class S4HANALoader:
 │     • Estimate migration time per table                     │
 │                                                             │
 │  2. Schema Mapping                                          │
-│     • Map Oracle data types → SAP HANA types               │
+│     • Map Oracle data types → SAP HANA types                │
 │     • Document column transformations                       │
 │     • Identify custom logic requirements                    │
 │                                                             │
 │  3. Infrastructure Sizing                                   │
 │     • Calculate bandwidth requirements                      │
 │     • Size middleware compute resources                     │
-│     • Provision SAP HANA capacity                          │
+│     • Provision SAP HANA capacity                           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -767,8 +767,8 @@ SELECT
 ┌─────────────────────────────────────────────────────────────┐
 │  Extraction Layer (Oracle)                                  │
 │  • cx_Oracle (Python) - for custom logic                    │
-│  • Oracle Data Pump - for initial schema export            │
-│  • Oracle GoldenGate - for CDC/real-time sync (optional)   │
+│  • Oracle Data Pump - for initial schema export             │
+│  • Oracle GoldenGate - for CDC/real-time sync (optional)    │
 └─────────────────────────────────────────────────────────────┘
                              ↓
 ┌─────────────────────────────────────────────────────────────┐
@@ -781,15 +781,15 @@ SELECT
 ┌─────────────────────────────────────────────────────────────┐
 │  Loading Layer (SAP S/4HANA)                                │
 │  • hdbcli - for SAP HANA database loads                     │
-│  • OData APIs - for S/4HANA business objects               │
-│  • RFC/BAPI - for legacy ABAP transactions                 │
+│  • OData APIs - for S/4HANA business objects                │
+│  • RFC/BAPI - for legacy ABAP transactions                  │
 └─────────────────────────────────────────────────────────────┘
                              ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  Orchestration Layer                                        │
 │  • Apache Airflow - for workflow management                 │
-│  • Cloud Foundry - for deployment & scaling                │
-│  • SAP Cloud ALM - for monitoring & alerting               │
+│  • Cloud Foundry - for deployment & scaling                 │
+│  • SAP Cloud ALM - for monitoring & alerting                │
 └─────────────────────────────────────────────────────────────┘
 ```
 

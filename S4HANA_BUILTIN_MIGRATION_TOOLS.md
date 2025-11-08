@@ -29,28 +29,28 @@ SAP S/4HANA provides multiple built-in tools for data migration, each suited for
 ┌─────────────────────────────────────────────────────────────────┐
 │              SAP S/4HANA Built-in Migration Tools               │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                   │
+│                                                                 │
 │  ┌──────────────────┐  ┌──────────────────┐                     │
 │  │ Migration        │  │  Migration       │                     │
 │  │ Cockpit (LTMC)   │  │  Object Modeler  │                     │
 │  │                  │  │  (LTMOM)         │                     │
 │  │ ★ Primary Tool   │  │  ★ Customize     │                     │
 │  └──────────────────┘  └──────────────────┘                     │
-│                                                                   │
+│                                                                 │
 │  ┌──────────────────┐  ┌──────────────────┐                     │
 │  │ LSMW             │  │  SAP Data        │                     │
 │  │ (Legacy)         │  │  Services        │                     │
 │  │                  │  │                  │                     │
 │  │ ★ Legacy Support │  │  ★ Complex ETL   │                     │
 │  └──────────────────┘  └──────────────────┘                     │
-│                                                                   │
+│                                                                 │
 │  ┌──────────────────┐  ┌──────────────────┐                     │
 │  │ System           │  │  Rapid Data      │                     │
 │  │ Conversion       │  │  Migration (RDM) │                     │
 │  │                  │  │                  │                     │
 │  │ ★ ECC to S/4     │  │  ★ Cloud Edition │                     │
 │  └──────────────────┘  └──────────────────┘                     │
-│                                                                   │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -87,40 +87,40 @@ SAP S/4HANA provides multiple built-in tools for data migration, each suited for
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Migration Cockpit (LTMC)                      │
+│                    Migration Cockpit (LTMC)                     │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                   │
-│  Source Data                                                     │
-│  ↓                                                               │
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐        │
-│  │ Excel/CSV    │   │ Oracle DB    │   │ SQL Server   │        │
-│  │ Files        │   │              │   │              │        │
-│  └──────┬───────┘   └──────┬───────┘   └──────┬───────┘        │
+│                                                                 │
+│  Source Data                                                    │
+│  ↓                                                              │
+│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐         │
+│  │ Excel/CSV    │   │ Oracle DB    │   │ SQL Server   │         │
+│  │ Files        │   │              │   │              │         │
+│  └──────┬───────┘   └──────┬───────┘   └──────┬───────┘         │
 │         │                  │                  │                 │
 │         └──────────────────┼──────────────────┘                 │
-│                            ↓                                     │
+│                            ↓                                    │
 │         ┌──────────────────────────────────┐                    │
 │         │  Data Staging (LTMC Tables)      │                    │
-│         │  • Validation                     │                    │
-│         │  • Transformation                 │                    │
-│         │  • Error Checking                 │                    │
-│         └──────────────────┬────────────────┘                    │
-│                            ↓                                     │
+│         │  • Validation                    │                    │
+│         │  • Transformation                │                    │
+│         │  • Error Checking                │                    │
+│         └──────────────────┬───────────────┘                    │
+│                            ↓                                    │
 │         ┌──────────────────────────────────┐                    │
 │         │  Migration Objects               │                    │
 │         │  • /SAPAPO/MATMAP (Materials)    │                    │
 │         │  • /SAPAPO/LOCMAP (Locations)    │                    │
 │         │  • /SAPAPO/CUSTMAP (Customers)   │                    │
-│         └──────────────────┬────────────────┘                    │
-│                            ↓                                     │
+│         └──────────────────┬────────────────┘                   │
+│                            ↓                                    │
 │         ┌──────────────────────────────────┐                    │
 │         │  S/4HANA Business Objects        │                    │
-│         │  • BAPIs/APIs                     │                    │
-│         │  • IDoc Processing                │                    │
-│         └──────────────────┬────────────────┘                    │
-│                            ↓                                     │
-│                   S/4HANA Database                               │
-│                                                                   │
+│         │  • BAPIs/APIs                    │                    │
+│         │  • IDoc Processing               │                    │
+│         └──────────────────┬───────────────┘                    │
+│                            ↓                                    │
+│                   S/4HANA Database                              │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -187,12 +187,12 @@ Navigate to: SAP Fiori Launchpad → Migration → Migration Cockpit
 ╠════════════════════════════════════════════════════════════╣
 ║  Search: [Business Partner_____________]  [Search]         ║
 ║                                                            ║
-║  ☐ 0BP_IDEN          Business Partner                     ║
-║  ☐ 0MATERIAL_IDEN    Material Master                      ║
-║  ☐ 0SORDER_IDEN      Sales Order                          ║
-║  ☐ 0CUSTOMER_IDEN    Customer                             ║
+║  ☐ 0BP_IDEN          Business Partner                      ║
+║  ☐ 0MATERIAL_IDEN    Material Master                       ║
+║  ☐ 0SORDER_IDEN      Sales Order                           ║
+║  ☐ 0CUSTOMER_IDEN    Customer                              ║
 ║                                                            ║
-║  [Activate Selected]  [Deactivate]  [Check Status]        ║
+║  [Activate Selected]  [Deactivate]  [Check Status]         ║
 ╚════════════════════════════════════════════════════════════╝
 ```
 
@@ -216,13 +216,13 @@ Navigate to: SAP Fiori Launchpad → Migration → Migration Cockpit
    │ Create Migration Project                        │
    ├─────────────────────────────────────────────────┤
    │                                                 │
-   │ Project Name:        [ORA_TO_S4_MIGRATION____] │
+   │ Project Name:        [ORA_TO_S4_MIGRATION____]  │
    │ Description:         [Oracle to S/4HANA ______] │
-   │                      [Business Partner Data ___] │
-   │ Migration Object:    [0BP_IDEN______________▼] │
-   │ Data Source:         [⦿ File Upload            │
+   │                      [Business Partner Data ___]│
+   │ Migration Object:    [0BP_IDEN______________▼]  │
+   │ Data Source:         [⦿ File Upload             │
    │                       ○ Direct Transfer         │
-   │                       ○ Staging Table          │
+   │                       ○ Staging Table           │
    │                                                 │
    │ [Create]  [Cancel]                              │
    └─────────────────────────────────────────────────┘
@@ -361,15 +361,15 @@ Before upload, ensure:
    ┌──────────────────┬────────────┬─────────────────────┐
    │ Source Field     │ Mapping    │ Target Field (S/4)  │
    ├──────────────────┼────────────┼─────────────────────┤
-   │ CUSTOMER_ID      │ ───────────→ BP_NUMBER            │
-   │ CUSTOMER_NAME    │ ───────────→ BP_NAME              │
+   │ CUSTOMER_ID      │ ───────────→ BP_NUMBER           │
+   │ CUSTOMER_NAME    │ ───────────→ BP_NAME             │
    │ CUST_TYPE        │ ─┐         │                     │
    │                  │  │ Rule 1  │                     │
    │                  │  └────────→ BP_TYPE              │
-   │ ADDRESS_LINE1    │ ───────────→ STREET               │
-   │ CITY             │ ───────────→ CITY                 │
-   │ ZIP              │ ───────────→ POSTAL_CODE          │
-   │ COUNTRY_CODE     │ ───────────→ COUNTRY              │
+   │ ADDRESS_LINE1    │ ───────────→ STREET              │
+   │ CITY             │ ───────────→ CITY                │
+   │ ZIP              │ ───────────→ POSTAL_CODE         │
+   │ COUNTRY_CODE     │ ───────────→ COUNTRY             │
    └──────────────────┴────────────┴─────────────────────┘
 
    Transformation Rule 1:
@@ -460,8 +460,8 @@ Summary: 10,000 records loaded to staging
 ║  Phase 1: Field Validation     [✅ Complete]   ║
 ║  Phase 2: Business Rules       [✅ Complete]   ║
 ║  Phase 3: Duplicate Check      [⏳ Running]    ║
-║  Phase 4: Foreign Keys         [⏸ Pending]    ║
-║  Phase 5: Custom Rules         [⏸ Pending]    ║
+║  Phase 4: Foreign Keys         [⏸ Pending]     ║
+║  Phase 5: Custom Rules         [⏸ Pending]     ║
 ║                                                ║
 ║  Records validated: 7,234 / 10,000             ║
 ╚════════════════════════════════════════════════╝
@@ -574,7 +574,7 @@ Summary: 10,000 records loaded to staging
 ║  Batch 1/100:  [✅ Complete] 100/100 success   ║
 ║  Batch 2/100:  [✅ Complete] 98/100 success    ║
 ║  Batch 3/100:  [⏳ Running]  45/100 processed  ║
-║  Batch 4/100:  [⏸ Pending]                    ║
+║  Batch 4/100:  [⏸ Pending]                     ║
 ║  ...                                           ║
 ║                                                ║
 ║  Estimated completion: 12 minutes              ║
@@ -663,7 +663,7 @@ Pre-Migration Checklist:
    ║                                                ║
    ║  Are you sure you want to proceed?             ║
    ║                                                ║
-   ║  [✅ Yes, Start Migration]  [❌ Cancel]        ║
+   ║  [✅ Yes, Start Migration]  [❌ Cancel]         ║
    ╚════════════════════════════════════════════════╝
    ```
 
@@ -1338,12 +1338,12 @@ For real-time data integration between Oracle and S/4HANA Cloud, use **SAP Cloud
 ┌─────────────────────────────────┐
 │ SAP Cloud Platform Integration  │
 │                                 │
-│  ┌──────────────────────────┐  │
-│  │  Integration Flow        │  │
-│  │  • Data Mapping          │  │
-│  │  • Transformation        │  │
-│  │  • Error Handling        │  │
-│  └──────────────────────────┘  │
+│  ┌──────────────────────────┐   │
+│  │  Integration Flow        │   │
+│  │  • Data Mapping          │   │
+│  │  • Transformation        │   │
+│  │  • Error Handling        │   │
+│  └──────────────────────────┘   │
 └──────────────┬──────────────────┘
                │ OData API
                ↓
